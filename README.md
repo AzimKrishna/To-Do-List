@@ -1,6 +1,6 @@
 # To-Do List App 📝
 
-![To-Do List App](screenshot.png)
+![To-Do List App](img/ico.png)
 
 ## Overview 🌟
 
