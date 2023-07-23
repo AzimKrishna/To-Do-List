@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Using API to fetch profile data
-    fetch("../db/data.txt").then(response => response.text()).then(data => {
+    fetch("db/data.txt").then(response => response.text()).then(data => {
       // Use regular expressions to extract name and email
       const nameRegex = /Your_name\s*=\s*"([^"]*)"/;
       const emailRegex = /Your_email\s*=\s*"([^"]*)"/;
