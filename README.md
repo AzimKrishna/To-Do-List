@@ -57,6 +57,6 @@ The To-Do List app is a simple and efficient task management tool that helps you
 
 ## Feedback and Support 💌
 
-Thank you for using our To-Do List app. We hope it helps you stay organized and productive. If you have any feedback, suggestions, or encounter any issues, please feel free to contact the developer, Azim Baji Krishna, at azimbaji19@gmail.com
+Thank you for using my To-Do List app. I hope it helps you stay organized and productive. If you have any feedback, or suggestions, or encounter any issues, please feel free to contact the developer, Azim Baji Krishna, at azimbaji19@gmail.com
 
 Happy tasking! 😊
