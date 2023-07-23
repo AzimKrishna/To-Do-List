@@ -17,14 +17,20 @@ The To-Do List app is a simple and efficient task management tool that helps you
 
 ## Screenshots 📸
 
-![Screenshot 1](screenshot/screenshot_2.png)
+![Screenshot 1](screenshots/screenshot_2.png)
 *Screenshot of the To-Do List app showing tasks for the "My Day" section.*
 
-![Screenshot 2](screenshot2.png)
+![Screenshot 2](screenshots/screenshot_1.png)
 *Screenshot of the To-Do List app showing tasks for the "Current Week" section.*
 
-![Screenshot 3](screenshot3.png)
+![Screenshot 2](screenshots/screenshot_3.png)
 *Screenshot of the To-Do List app showing tasks for the "Current Month" section.*
+
+![Screenshot 2](screenshots/screenshot_4.png)
+*Screenshot of the To-Do List app showing a confirmation pop-up for deleting a task.*
+
+![Screenshot 2](screenshots/screenshot_5.png)
+*Screenshot of the To-Do List app showing tasks that match the search results.*
 
 ## How to Use 📖
 
@@ -36,7 +42,9 @@ The To-Do List app is a simple and efficient task management tool that helps you
 
 4. **Delete Task:** To delete a task, click on the trash icon beside the task. A confirmation popup will appear to confirm the deletion.
 
-5. **Updating Profile:** The app fetches profile data from the "data.txt" file. To update the profile details, modify the "Your_name" and "Your_email" values in the "data.txt" file and save the changes.
+5. **Search Function**: You can search for specific tasks by typing keywords in the search box and pressing Enter. The app will filter and display tasks that match the search query and the section currently selected.
+
+6. **Updating Profile:** The app fetches profile data from the "data.txt" file. To update the profile details, modify the "Your_name" and "Your_email" values in the "data.txt" file and save the changes.
 
 ## Important Notes ⚠️
 
@@ -44,6 +52,7 @@ The To-Do List app is a simple and efficient task management tool that helps you
 - For security reasons, closing the main browser window programmatically is not allowed.
 - Please ensure to fill both the task description and due date fields before adding a new task.
 - Tasks are sorted based on due dates in ascending order.
+- This app is not optimized for mobile devices.
 - For the app to work properly, you need to host it on a localhost or a server. Simply opening the index file as a web page won't provide the required functionality.
 
 ## Feedback and Support 💌
