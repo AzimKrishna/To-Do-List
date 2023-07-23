@@ -1,6 +1,6 @@
 # To-Do List App 📝
 
-<img src="img/ico.png" alt="To-Do List App" width="24" height="24">
+<img src="img/ico.png" alt="To-Do List App" width="35" height="35">
 
 ## Overview 🌟
 
@@ -17,7 +17,7 @@ The To-Do List app is a simple and efficient task management tool that helps you
 
 ## Screenshots 📸
 
-![Screenshot 1](screenshot1.png)
+![Screenshot 1](screenshot/screenshot_2.png)
 *Screenshot of the To-Do List app showing tasks for the "My Day" section.*
 
 ![Screenshot 2](screenshot2.png)
