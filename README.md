@@ -17,19 +17,19 @@ The To-Do List app is a simple and efficient task management tool that helps you
 
 ## Screenshots 📸
 
-![Screenshot 1](screenshots/screenshot_2.png)
+![Screenshot 1](screenshots/Screenshot_2.png)
 *Screenshot of the To-Do List app showing tasks for the "My Day" section.*
 
-![Screenshot 2](screenshots/screenshot_1.png)
+![Screenshot 2](screenshots/Screenshot_1.png)
 *Screenshot of the To-Do List app showing tasks for the "Current Week" section.*
 
-![Screenshot 2](screenshots/screenshot_3.png)
+![Screenshot 2](screenshots/Screenshot_3.png)
 *Screenshot of the To-Do List app showing tasks for the "Current Month" section.*
 
-![Screenshot 2](screenshots/screenshot_4.png)
+![Screenshot 2](screenshots/Screenshot_4.png)
 *Screenshot of the To-Do List app showing a confirmation pop-up for deleting a task.*
 
-![Screenshot 2](screenshots/screenshot_5.png)
+![Screenshot 2](screenshots/Screenshot_5.png)
 *Screenshot of the To-Do List app showing tasks that match the search results.*
 
 ## How to Use 📖
