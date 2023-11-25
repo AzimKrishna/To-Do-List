@@ -1,14 +1,14 @@
 function showDivisionsWithDelay() {
-    const cardDivisions = document.querySelectorAll('.card');
-    const delay = 300; 
+    const cardDivisions = document.querySelectorAll(".card");
+    const delay = 300;
 
     cardDivisions.forEach((card, index) => {
         setTimeout(() => {
-        card.style.opacity = 1;
+            card.style.opacity = 1;
         }, (index + 1) * delay);
     });
-    }
-    
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const taskContainer = document.getElementById("TaskContainer");
     const addButton = document.querySelector(".bx-plus");
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const thisMonthLink = document.getElementById("o3");
     const otherLink = document.getElementById("o4");
     const titleLink = document.getElementById("header_title");
-    
 
     // const taskList = document.getElementById("taskList");
 
@@ -40,17 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 text: "Please enter both task and due date!",
                 icon: "error",
             });
-        }else{
+        } else {
             // Generate a unique numeric ID
             const id = generateNumericID();
 
             // Create a new object representing the to-do task
             const task = {
-            id: id,
-            text: taskDescription,
-            date: dueDate,
-            completed: false,
-            timestamp: Date.now(), // Shortened timestamp in milliseconds
+                id: id,
+                text: taskDescription,
+                date: dueDate,
+                completed: false,
+                timestamp: Date.now(), // Shortened timestamp in milliseconds
             };
 
             // Convert the task object to a JSON string
@@ -71,71 +70,80 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add keypress event listener to the text input and date input
     textInput.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
-        saveData();
+            saveData();
         }
     });
 
     dateInput.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
-        saveData();
+            saveData();
         }
     });
 
-    
     // Function to check if a date is today
     const isToday = (dateString) => {
         const today = new Date();
         const date = new Date(dateString);
         return date.toDateString() === today.toDateString();
-        };
+    };
     // Function to retrieve tasks from LocalStorage and display them
     const displayTasks = (section, tasksToDisplay) => {
         currentSection = section;
         const tasksData = Object.values(localStorage);
-        const tasks = tasksData.map(taskData => JSON.parse(taskData));
+        const tasks = tasksData.map((taskData) => JSON.parse(taskData));
         const tasksToRender = tasksToDisplay || tasks;
         tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
-        const todayDate = new Date().toLocaleDateString('en-CA');
-
+        const todayDate = new Date().toLocaleDateString("en-CA");
 
         // Filter tasks based on the selected section
-        const filteredTasks = tasksToRender.filter(task => {
+        const filteredTasks = tasksToRender.filter((task) => {
             switch (section) {
-            case "myDay":
-                titleLink.textContent = "My Day";
-                return task.date === todayDate;
-            case "thisWeek":
-                titleLink.textContent = "Current Week";
-                const getStartOfWeek = (date) => {
-                    const day = date.getDay();
-                    return new Date(date.getFullYear(), date.getMonth(), date.getDate() - day);
-                  };
-                  
-                  const getEndOfWeek = (date) => {
-                    const day = date.getDay();
-                    return new Date(date.getFullYear(), date.getMonth(), date.getDate() + (6 - day));
-                  };
-                  
-                  const today = new Date();
-                  const startOfWeek = getStartOfWeek(today);
-                  const endOfWeek = getEndOfWeek(today);
-                  
-                  const taskDate = new Date(task.date); // Convert task.date to a Date object for comparison
-                  
-                  return taskDate >= startOfWeek && taskDate <= endOfWeek;
-            case "thisMonth":
-                titleLink.textContent = "Current Month";
-                const getStartOfMonth = (date) => {
-                    return new Date(date.getFullYear(), date.getMonth(), 1);
-                  };
-                  
-                  // Function to get the end date of the current month
-                  const getEndOfMonth = (date) => {
-                    return new Date(date.getFullYear(), date.getMonth() + 1, 0);
-                  };
-                const startOfMonth = getStartOfMonth(new Date());
-                const endOfMonth = getEndOfMonth(new Date());
-                return task.date >= startOfMonth.toISOString().slice(0, 10) && task.date <= endOfMonth.toISOString().slice(0, 10);
+                case "myDay":
+                    titleLink.textContent = "My Day";
+                    return task.date === todayDate;
+                case "thisWeek":
+                    titleLink.textContent = "Current Week";
+                    const getStartOfWeek = (date) => {
+                        const day = date.getDay();
+                        return new Date(
+                            date.getFullYear(),
+                            date.getMonth(),
+                            date.getDate() - day
+                        );
+                    };
+
+                    const getEndOfWeek = (date) => {
+                        const day = date.getDay();
+                        return new Date(
+                            date.getFullYear(),
+                            date.getMonth(),
+                            date.getDate() + (6 - day)
+                        );
+                    };
+
+                    const today = new Date();
+                    const startOfWeek = getStartOfWeek(today);
+                    const endOfWeek = getEndOfWeek(today);
+
+                    const taskDate = new Date(task.date); // Convert task.date to a Date object for comparison
+
+                    return taskDate >= startOfWeek && taskDate <= endOfWeek;
+                case "thisMonth":
+                    titleLink.textContent = "Current Month";
+                    const getStartOfMonth = (date) => {
+                        return new Date(date.getFullYear(), date.getMonth(), 1);
+                    };
+
+                    // Function to get the end date of the current month
+                    const getEndOfMonth = (date) => {
+                        return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+                    };
+                    const startOfMonth = getStartOfMonth(new Date());
+                    const endOfMonth = getEndOfMonth(new Date());
+                    return (
+                        task.date >= startOfMonth.toISOString().slice(0, 10) &&
+                        task.date <= endOfMonth.toISOString().slice(0, 10)
+                    );
                 case "other":
                     titleLink.textContent = "All tasks";
                     return true; // Display all tasks for "Other" section
@@ -144,16 +152,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        taskContainer.innerHTML = filteredTasks.map(task => `
+        taskContainer.innerHTML = filteredTasks
+            .map(
+                (task) => `
           <div class="card align" data-task-id="${task.id}">
-            <input type="checkbox" name="task" id="${task.id}" ${task.completed ? "checked" : ""}>
+            <input type="checkbox" name="task" id="${task.id}" ${task.completed ? "checked" : ""
+                    }>
             <div ${task.completed ? 'class="marker done"' : 'class="marker"'}>
               <span>${task.text}</span>
-              <p class="date ${isToday(task.date) ? "today" : ""}">${isToday(task.date) ? "Today" : "<i class='bx bx-calendar-alt'></i> " + task.date}</p>              
+              <p class="date ${isToday(task.date) ? "today" : ""}">${isToday(task.date)
+                        ? "Today"
+                        : "<i class='bx bx-calendar-alt'></i> " + task.date
+                    }</p>              
             </div>
             <i class="bx bx-trash-alt"></i>
           </div>
-        `).join("");
+        `
+            )
+            .join("");
 
         const searchInput = document.getElementById("search");
 
@@ -162,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const searchText = searchInput.value.trim().toLowerCase();
             if (searchText !== "") {
                 // Filter tasks based on the search text
-                const filteredTasks = tasks.filter(task =>
+                const filteredTasks = tasks.filter((task) =>
                     task.text.toLowerCase().includes(searchText)
                 );
                 displayTasks(currentSection, filteredTasks);
@@ -172,118 +188,169 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-            // Add keypress event listener to the search input
+        // Add keypress event listener to the search input
         searchInput.addEventListener("keypress", (event) => {
             if (event.key === "Enter") {
                 handleSearch();
             }
         });
 
-            // Attach event listener to the parent container
-        taskContainer.addEventListener('click', (event) => {
+        // Attach event listener to the parent container
+        taskContainer.addEventListener("click", (event) => {
             // Handle checkbox change
             if (event.target.type === "checkbox" && event.target.name === "task") {
-            const taskId = event.target.id;
-            const task = tasks.find(task => task.id.toString() === taskId);
-            if (task) {
-                task.completed = event.target.checked;
-                localStorage.setItem(task.id, JSON.stringify(task));
-                const marker = event.target.nextElementSibling;
-                if (marker.classList.contains("marker")) {
-                marker.classList.toggle("done", task.completed);
+                const taskId = event.target.id;
+                const task = tasks.find((task) => task.id.toString() === taskId);
+                if (task) {
+                    task.completed = event.target.checked;
+                    localStorage.setItem(task.id, JSON.stringify(task));
+                    const marker = event.target.nextElementSibling;
+                    if (marker.classList.contains("marker")) {
+                        marker.classList.toggle("done", task.completed);
+                    }
                 }
-            }
             }
 
             // Handle delete icon click
             if (event.target.classList.contains("bx-trash-alt")) {
-                const taskId = event.target.closest('.card').dataset.taskId;
+                const taskId = event.target.closest(".card").dataset.taskId;
                 swal({
                     title: "Delete current task?",
                     text: "Once deleted, you will not be able to recover this task!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
-                })
-                .then((willDelete) => {
+                }).then((willDelete) => {
                     if (willDelete) {
                         localStorage.removeItem(taskId);
-                        event.target.closest('.card').remove();
+                        event.target.closest(".card").remove();
                         swal("Poof! Your task has been deleted!", {
                             icon: "success",
                         });
                     }
                 });
             }
-
         });
-        showDivisionsWithDelay(); 
+        showDivisionsWithDelay();
     };
-  
+
     const buttonsDiv = document.querySelector(".buttons");
     buttonsDiv.addEventListener("click", () => {
-      swal({
-        title: "Delete all data?",
-        text: "Once deleted, you will not be able to recover this data!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          // If user confirms, delete all entries from LocalStorage and clear the taskContainer
-          localStorage.clear();
-          taskContainer.innerHTML = "";
-          swal("All data has been deleted!", {
-            icon: "success",
-          });
-        } 
-      });
+        swal({
+            title: "Delete all data?",
+            text: "Once deleted, you will not be able to recover this data!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                // If user confirms, delete all entries from LocalStorage and clear the taskContainer
+                localStorage.clear();
+                taskContainer.innerHTML = "";
+                swal("All data has been deleted!", {
+                    icon: "success",
+                });
+            }
+        });
     });
 
     const logoutLink = document.getElementById("logoutLink");
     logoutLink.addEventListener("click", (event) => {
-      event.preventDefault(); 
-      window.location.href = "about:blank";
+        event.preventDefault();
+
+        // Remove user preferences from local storage
+        localStorage.removeItem("userPreferences");
+
+        // Redirect to about:blank or any other destination as needed
+        window.location.href = "about:blank";
     });
 
-    // Using API to fetch profile data
-    fetch("db/data.txt").then(response => response.text()).then(data => {
-      // Use regular expressions to extract name and email
-      const nameRegex = /Your_name\s*=\s*"([^"]*)"/;
-      const emailRegex = /Your_email\s*=\s*"([^"]*)"/;
+    function getUserPreferences() {
+        const storedPreferences = localStorage.getItem("userPreferences");
+        const defaultPreferences = {
+            name: "John Doe",
+            email: "john@gmail.com",
+        };
 
-      const nameMatch = data.match(nameRegex);
-      const emailMatch = data.match(emailRegex);
+        return storedPreferences
+            ? JSON.parse(storedPreferences)
+            : defaultPreferences;
+    }
+    // Function to set user preferences in localStorage
+    function setUserPreferences(name, email) {
+        const preferences = { name, email };
+        localStorage.setItem("userPreferences", JSON.stringify(preferences));
+    }
 
-      // Check if both name and email are found in the file
-      if (nameMatch && emailMatch) {
-        const name = nameMatch[1];
-        const email = emailMatch[1];
+    // Function to prompt the user for their name and email using SweetAlert
+    function promptForNameAndEmail() {
+        swal({
+            title: "Enter your information",
+            content: {
+                element: "div",
+                attributes: {
+                    innerHTML: `
+          <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Name" id="swal-input-name" required="">
+            <label for="swal-input-name" class="form__label">Name</label>
+          </div>
+          <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Email" id="swal-input-email" required="">
+            <label for="swal-input-email" class="form__label">Email</label>
+          </div>
+        `,
+                },
+            },
+            buttons: {
+                cancel: "Cancel",
+                confirm: "Save",
+            },
+            closeOnClickOutside: false,
+        }).then((result) => {
+            if (result && result.dismiss !== "cancel") {
+                const name = document.getElementById("swal-input-name").value;
+                const email = document.getElementById("swal-input-email").value;
 
-        // Replace the placeholder elements with the retrieved values
+                // Set default values if the user didn't enter any details
+                const finalName = name || "John Doe";
+                const finalEmail = email || "john@gmail.com";
+
+                setUserPreferences(finalName, finalEmail);
+                displayProfileData();
+            }
+        });
+    }
+
+    // Function to display user profile data
+    function displayProfileData() {
+        const preferences = getUserPreferences();
+
         const nameElement = document.getElementById("name");
         const emailElement = document.getElementById("email");
 
-        nameElement.textContent = name;
-        emailElement.textContent = email;
-      } else {
-        console.error("Name or Email not found in the file.");
-      }
-    }).catch(error => console.error("Error fetching the file:", error));
+        nameElement.textContent = preferences.name;
+        emailElement.textContent = preferences.email;
+    }
 
-    
-    
+    // Check if user preferences are already set
+    const preferences = getUserPreferences();
+
+    if (
+        preferences.name === "John Doe" &&
+        preferences.email === "john@gmail.com"
+    ) {
+        // If preferences are default, prompt the user for their name and email
+        promptForNameAndEmail();
+    }
+
+    // Call the function to display profile data
+    displayProfileData();
+
     // Event listeners for section links
     myDayLink.addEventListener("click", () => displayTasks("myDay"));
     thisWeekLink.addEventListener("click", () => displayTasks("thisWeek"));
     thisMonthLink.addEventListener("click", () => displayTasks("thisMonth"));
     otherLink.addEventListener("click", () => displayTasks("other"));
     let currentSection = "myDay";
-    displayTasks(currentSection);   
-    
-
+    displayTasks(currentSection);
 });
-
-
-

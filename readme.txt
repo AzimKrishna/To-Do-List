@@ -18,7 +18,7 @@ This To-Do List app allows you to manage your tasks efficiently and stay organiz
 
 5. **Search Function**: You can search for specific tasks by typing keywords in the search box and pressing Enter. The app will filter and display tasks that match the search query and the section currently selected.
 
-6. **Updating Profile**: The app fetches profile data from the "data.txt" file in the db folder. To update the profile details, modify the "Your_name" and "Your_email" values in the "data.txt" file and save the changes.
+6. **Updating Profile**: The app prompts the user for entering your name and email which will be stored in the localStorage.
 
 ## Important Notes
 
