@@ -387,10 +387,19 @@ document.addEventListener("DOMContentLoaded", () => {
     var toggleMenu = () => {
         containerLeft.classList.toggle('v-class');
         burgerIcon.classList.toggle('cross');
-        console.log('hey1');
     };
 
     burgerIcon.addEventListener('click', toggleMenu);
+
+    document.body.addEventListener('click', (event) => {
+        const target = event.target;
+    
+        // Check if the clicked element is not inside the containerLeft
+        if (!containerLeft.contains(target) && !burgerIcon.contains(target)) {
+            containerLeft.classList.remove('v-class');
+            burgerIcon.classList.remove('cross');
+        }
+    });
 
 });
 
