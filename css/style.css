@@ -12,6 +12,67 @@ html, body {
     height: 100%;
     margin: 0;
 }
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-color: #E7E8E8;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    background: #353535;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotationBack 1s ease-in-out infinite reverse;
+}
+
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: #2e2e2e;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: rgb(0, 0, 0);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
 .done{
     text-decoration: line-through;
 	color: #424242;
@@ -95,7 +156,9 @@ html, body {
     box-shadow: none;
   }
 /* universal properties */
-
+.hamburger-container{
+    display: none;
+}
 .home{
     height: 100%;
     width: 100%;
@@ -409,4 +472,959 @@ html, body {
     /* Change the color of the calendar icon in Firefox */
     filter: invert(1);
     opacity: 1;
+  }
+
+
+
+  /* Default styles for all devices */
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 575px) {
+    .hamburger-container{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 15px;
+       }
+        .burger {
+            position: absolute;
+            cursor: pointer;
+            top: 100%;
+            left: 2%;
+            display: block;
+            z-index: 888;
+        }
+        .line {
+            width: 33px;
+            height: 4px;
+            background-color: #1f1f1f93;
+            margin: 3px 3px;
+            transition: transform 0.3s;
+        }
+        .burger.cross .line:nth-child(1) {
+            transform: rotate(-43deg) translate(-5px, 5px);
+        }
+    
+        .burger.cross .line:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .burger.cross .line:nth-child(3) {
+            transform: rotate(43deg) translate(-5px, -5px);
+        }
+    
+    
+        .container-main{
+            width: 96%;
+            height: 90vh;
+            position: relative;
+            /* border-radius: 12px; */
+            overflow: hidden;
+        }
+        .center{
+            padding: 12px;
+        }
+        .top{
+            padding-top: 15%;
+        }
+    
+        .container-left{
+            left: -100%;
+            bottom: 0;
+            top: 0;
+            position: absolute;
+            background-color: #E7E8E8;
+            z-index: 666;
+            width: 70%;
+            transition: left 0.3s ease;
+        }
+        .v-class{
+            left: 0%;
+        }
+        .container-right{
+            /* border-radius: 0px 12px 12px 0px; */
+            width: 100%;
+        }
+        .dots{
+            display: none;
+        }
+        .profile {
+            margin-top: 9%;
+        }
+        .profile .name{
+            font-size:  1rem;
+        }
+        .profile .email{
+            font-size: 0.7rem;
+        }
+        .profile div{
+            padding-left: 8px;
+            max-width: 220px;
+            white-space: nowrap; /* Prevent the text from wrapping */
+            overflow: hidden; /* Hide overflowing content */
+            text-overflow: ellipsis;
+        }
+        .menu .search-holder input[type=search]{
+            font-size: 0.9rem;
+            width: 100%;
+            height: 35px;
+            /* border-radius: 6px;
+            padding: 2px 6px; */
+        }
+        .menu .list{
+            padding-top: 6px;
+            
+        }
+        .menu .list ul li{
+            /* margin-top: 8px; */
+            height: 35px;
+        }
+        .menu .list ul li a{
+            font-size: 0.9rem;
+            height: 35px;
+            width: 100%;
+            /* padding-left: 8px; */
+        }
+        .menu .list ul li:hover{
+            /* border-radius: 6px; */
+        }
+        .menu .list ul li i{
+            font-size: 1rem;
+        }
+        .menu .list ul li span{
+            /* padding-left: 8px; */
+        }
+        .logout a{
+            /* padding-left: 8px; */
+            font-size: 0.9rem;
+            height: 35px;
+        }
+        .container-sub{
+            padding-top: 8%;
+            
+        }
+        .container-sub .header h2{
+            font-size: 1.5rem;
+        }
+        .container-sub .header .buttons{
+            height: 30px;
+            width: 45px;
+            margin-top: -19%;
+            /* border-radius: 6px; */
+        }
+        .container-sub .header .buttons div{
+            margin: 2px;
+            /* height: 4px;
+            width: 4px; */
+        }
+        .container-sub .card-holder{
+            margin-top: 28px;
+            /* height: 61vh; */
+            /* border-radius: 6px; */
+        }
+        .container-sub .card-holder::-webkit-scrollbar {
+            /* width: 8px; Set the width of the scrollbar */
+            /* border-radius: 6px; */
+          }
+          
+        .container-sub .card-holder::-webkit-scrollbar-thumb {
+            /* border-radius: 6px; */
+          }
+          
+        .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
+            /* border-radius: 6px; */
+          }
+          
+        .container-sub .card-holder::-webkit-scrollbar-track {
+            /* border-radius: 6px; */
+          }
+        .container-sub .card-holder .card{
+            font-size: 0.875rem;
+            border-radius: 4px;
+            margin: 2px 0px;
+            height: 48px;
+        }
+        .container-sub .card-holder .card div{
+            /* padding-left: 15px; */
+        }
+        .container-sub .card-holder .card .bx-trash-alt{
+            font-size: 1rem;
+        }
+        .date{
+            font-size: 0.65rem;
+        }
+        .container-sub .card-holder .card input[type=checkbox]{
+            /* width: 1rem;
+            height: 1rem; */
+            margin-left: 0px;
+        }
+    
+        .container-sub .add-new{
+            /* padding-bottom: 12px;
+            padding-right: 24px; */
+        }
+        .container-sub .add-new .card-new{
+            /* border-radius: 4px; */
+            height: 48px;
+        }
+        .container-sub .add-new .card-new .group1{
+            /* padding-left: 8px; */
+        
+        }
+        .container-sub .add-new .card-new .group1 i{
+            /* font-size: 1.6rem; */
+        }
+        .container-sub .add-new .card-new .group1 input[type=text]{
+            /* margin-left: 10px;
+            padding-left: 2px;
+            width: 70%; */
+            font-size: 0.875rem;
+            width: 75%;
+            height: 100%;
+        
+        }
+        .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+            font-size: 0.875rem;
+        }
+        .container-sub .add-new .card-new .group1 input[type=date]{
+            font-size: 0.7rem;
+            border: 1px solid rgba(255, 255, 255, 0.345);
+            border-radius: 6px;
+            /* width: 100%; */
+            width: 90px;
+        }
+        .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+            font-size: 0.875rem;
+    
+        }
+        .align{
+            padding: 0px 16px;
+        }
+    
+      }
+      
+  /* Small Devices (Tablets) */
+  @media (min-width: 576px) and (max-width: 767px) {
+   .hamburger-container{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 15px;
+   }
+    .burger {
+        position: absolute;
+        cursor: pointer;
+        top: 100%;
+        left: 2%;
+        display: block;
+        z-index: 888;
+    }
+    .line {
+        width: 33px;
+        height: 4px;
+        background-color: #1f1f1f93;
+        margin: 3px 3px;
+        transition: transform 0.3s;
+    }
+    .burger.cross .line:nth-child(1) {
+        transform: rotate(-43deg) translate(-5px, 5px);
+    }
+
+    .burger.cross .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.cross .line:nth-child(3) {
+        transform: rotate(43deg) translate(-5px, -5px);
+    }
+
+
+    .container-main{
+        width: 96%;
+        height: 87vh;
+        position: relative;
+        /* border-radius: 12px; */
+        overflow: hidden;
+    }
+    .center{
+        padding: 12px;
+    }
+    .top{
+        padding-top: 15%;
+    }
+
+    .container-left{
+        left: -100%;
+        bottom: 0;
+        top: 0;
+        position: absolute;
+        background-color: #E7E8E8;
+        z-index: 666;
+        width: 45%;
+        transition: left 0.3s ease;
+    }
+    .v-class{
+        left: 0%;
+    }
+    .container-right{
+        /* border-radius: 0px 12px 12px 0px; */
+        width: 100%;
+    }
+    .dots{
+        display: none;
+    }
+    .profile {
+        margin-top: 11%;
+    }
+    .profile .name{
+        font-size:  1rem;
+    }
+    .profile .email{
+        font-size: 0.7rem;
+    }
+    .profile div{
+        padding-left: 8px;
+        max-width: 220px;
+        white-space: nowrap; /* Prevent the text from wrapping */
+        overflow: hidden; /* Hide overflowing content */
+        text-overflow: ellipsis;
+    }
+    .menu .search-holder input[type=search]{
+        font-size: 0.9rem;
+        width: 100%;
+        height: 35px;
+        /* border-radius: 6px;
+        padding: 2px 6px; */
+    }
+    .menu .list{
+        padding-top: 6px;
+        
+    }
+    .menu .list ul li{
+        /* margin-top: 8px; */
+        height: 35px;
+    }
+    .menu .list ul li a{
+        font-size: 0.9rem;
+        height: 35px;
+        width: 100%;
+        /* padding-left: 8px; */
+    }
+    .menu .list ul li:hover{
+        /* border-radius: 6px; */
+    }
+    .menu .list ul li i{
+        font-size: 1rem;
+    }
+    .menu .list ul li span{
+        /* padding-left: 8px; */
+    }
+    .logout a{
+        /* padding-left: 8px; */
+        font-size: 0.9rem;
+        height: 35px;
+    }
+    .container-sub{
+        padding-top: 8%;
+        
+    }
+    .container-sub .header h2{
+        font-size: 1.5rem;
+    }
+    .container-sub .header .buttons{
+        height: 30px;
+        width: 45px;
+        margin-top: -19%;
+        /* border-radius: 6px; */
+    }
+    .container-sub .header .buttons div{
+        margin: 2px;
+        /* height: 4px;
+        width: 4px; */
+    }
+    .container-sub .card-holder{
+        margin-top: 28px;
+        /* height: 61vh; */
+        /* border-radius: 6px; */
+    }
+    .container-sub .card-holder::-webkit-scrollbar {
+        /* width: 8px; Set the width of the scrollbar */
+        /* border-radius: 6px; */
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-thumb {
+        /* border-radius: 6px; */
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
+        /* border-radius: 6px; */
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-track {
+        /* border-radius: 6px; */
+      }
+    .container-sub .card-holder .card{
+        font-size: 0.875rem;
+        border-radius: 4px;
+        margin: 2px 0px;
+        height: 45px;
+    }
+    .container-sub .card-holder .card div{
+        /* padding-left: 15px; */
+    }
+    .container-sub .card-holder .card .bx-trash-alt{
+        font-size: 1rem;
+    }
+    .date{
+        font-size: 0.65rem;
+    }
+    .container-sub .card-holder .card input[type=checkbox]{
+        /* width: 1rem;
+        height: 1rem; */
+        margin-left: 0px;
+    }
+
+    .container-sub .add-new{
+        /* padding-bottom: 12px;
+        padding-right: 24px; */
+    }
+    .container-sub .add-new .card-new{
+        /* border-radius: 4px; */
+        height: 45px;
+    }
+    .container-sub .add-new .card-new .group1{
+        /* padding-left: 8px; */
+    
+    }
+    .container-sub .add-new .card-new .group1 i{
+        /* font-size: 1.6rem; */
+    }
+    .container-sub .add-new .card-new .group1 input[type=text]{
+        /* margin-left: 10px;
+        padding-left: 2px;
+        width: 70%; */
+        font-size: 0.875rem;
+        height: 100%;
+        width: 75%;
+    
+    }
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+        font-size: 0.875rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]{
+        font-size: 0.875rem;
+        border: 1px solid rgba(255, 255, 255, 0.345);
+        border-radius: 6px;
+        /* width: 100%; */
+        width: 110px;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+        font-size: 0.875rem;
+
+    }
+    .align{
+        padding: 0px 16px;
+    }
+
+  }
+  
+  /* Medium Devices (Laptops) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .container-main{
+        width: 96%;
+        height: 80vh;
+    }
+    .center{
+        padding: 12px;
+    }
+    .top{
+        padding-top: 15%;
+    }
+
+    .container-main{
+        /* border-radius: 12px; */
+    }
+    .container-right{
+        /* border-radius: 0px 12px 12px 0px; */
+    }
+    .dots{
+        width: 65px;
+        padding-top: 8px;
+        padding-left: 6px;
+    }
+    .dots div{
+        height: 12px;
+        width: 12px;
+    }
+    .profile img{
+        /* height: 40px;
+        width: 40px; */
+    }
+    .profile .name{
+        font-size:  1rem;
+    }
+    .profile .email{
+        font-size: 0.7rem;
+    }
+    .profile div{
+        padding-left: 8px;
+        max-width: 220px;
+        white-space: nowrap; /* Prevent the text from wrapping */
+        overflow: hidden; /* Hide overflowing content */
+        text-overflow: ellipsis;
+    }
+    .menu .search-holder input[type=search]{
+        font-size: 0.9rem;
+        width: 100%;
+        height: 30px;
+        /* border-radius: 6px;
+        padding: 2px 6px; */
+    }
+    .menu .list{
+        padding-top: 6px;
+        
+    }
+    .menu .list ul li{
+        /* margin-top: 8px; */
+        height: 30px;
+    }
+    .menu .list ul li a{
+        font-size: 0.9rem;
+        height: 30px;
+        width: 100%;
+        /* padding-left: 8px; */
+    }
+    .menu .list ul li:hover{
+        /* border-radius: 6px; */
+    }
+    .menu .list ul li i{
+        font-size: 1rem;
+    }
+    .menu .list ul li span{
+        /* padding-left: 8px; */
+    }
+    .logout a{
+        /* padding-left: 8px; */
+        font-size: 0.9rem;
+        height: 30px;
+    }
+    .container-sub{
+        padding-top: 5%;
+        
+    }
+    .container-sub .header h2{
+        font-size: 1.5rem;
+    }
+    .container-sub .header .buttons{
+        height: 30px;
+        width: 45px;
+        /* border-radius: 6px; */
+    }
+    .container-sub .header .buttons div{
+        margin: 2px;
+        /* height: 4px;
+        width: 4px; */
+    }
+    .container-sub .card-holder{
+        margin-top: 28px;
+        /* height: 61vh; */
+        /* border-radius: 6px; */
+    }
+    .container-sub .card-holder::-webkit-scrollbar {
+        /* width: 8px; Set the width of the scrollbar */
+        /* border-radius: 6px; */
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-thumb {
+        /* border-radius: 6px; */
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
+        /* border-radius: 6px; */
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-track {
+        /* border-radius: 6px; */
+      }
+    .container-sub .card-holder .card{
+        font-size: 0.875rem;
+        border-radius: 4px;
+        margin: 2px 0px;
+        height: 40px;
+    }
+    .container-sub .card-holder .card div{
+        /* padding-left: 15px; */
+    }
+    .container-sub .card-holder .card .bx-trash-alt{
+        font-size: 1rem;
+    }
+    .date{
+        font-size: 0.65rem;
+    }
+    .container-sub .card-holder .card input[type=checkbox]{
+        /* width: 1rem;
+        height: 1rem; */
+        margin-left: 0px;
+    }
+
+    .container-sub .add-new{
+        /* padding-bottom: 12px;
+        padding-right: 24px; */
+    }
+    .container-sub .add-new .card-new{
+        /* border-radius: 4px; */
+        height: 40px;
+    }
+    .container-sub .add-new .card-new .group1{
+        /* padding-left: 8px; */
+    
+    }
+    .container-sub .add-new .card-new .group1 i{
+        /* font-size: 1.6rem; */
+    }
+    .container-sub .add-new .card-new .group1 input[type=text]{
+        /* margin-left: 10px;
+        padding-left: 2px;
+        width: 70%; */
+        font-size: 0.875rem;
+        height: 100%;
+    
+    }
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+        font-size: 0.875rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]{
+        font-size: 0.875rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+        font-size: 0.875rem;
+
+    }
+    .align{
+        padding: 0px 16px;
+    }
+
+  }
+  
+  /* Large Devices (Desktops) */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .container-main{
+        width: 96%;
+        height: 80vh;
+    }
+    .center{
+        padding: 12px;
+    }
+    .top{
+        padding-top: 15%;
+    }
+
+
+    .dots{
+        width: 65px;
+        padding-top: 8px;
+        padding-left: 6px;
+    }
+    .dots div{
+        height: 12px;
+        width: 12px;
+    }
+
+    .profile .name{
+        font-size:  1rem;
+    }
+    .profile .email{
+        font-size: 0.7rem;
+    }
+    .profile div{
+        padding-left: 8px;
+        max-width: 220px;
+        white-space: nowrap; /* Prevent the text from wrapping */
+        overflow: hidden; /* Hide overflowing content */
+        text-overflow: ellipsis;
+    }
+    .menu .search-holder input[type=search]{
+        font-size: 0.9rem;
+        width: 100%;
+        height: 30px;
+        /* border-radius: 6px;
+        padding: 2px 6px; */
+    }
+    .menu .list{
+        padding-top: 6px;
+        
+    }
+    .menu .list ul li{
+        /* margin-top: 8px; */
+        height: 30px;
+    }
+    .menu .list ul li a{
+        font-size: 0.9rem;
+        height: 30px;
+        width: 100%;
+        /* padding-left: 8px; */
+    }
+
+    .menu .list ul li i{
+        font-size: 1rem;
+    }
+
+    .logout a{
+        /* padding-left: 8px; */
+        font-size: 0.9rem;
+        height: 30px;
+    }
+    .container-sub{
+        padding-top: 5%;
+        
+    }
+    .container-sub .header h2{
+        font-size: 1.5rem;
+    }
+    .container-sub .header .buttons{
+        height: 30px;
+        width: 45px;
+        /* border-radius: 6px; */
+    }
+    .container-sub .header .buttons div{
+        margin: 2px;
+        /* height: 4px;
+        width: 4px; */
+    }
+    .container-sub .card-holder{
+        margin-top: 28px;
+        /* height: 61vh; */
+        /* border-radius: 6px; */
+    }
+
+    .container-sub .card-holder .card{
+        font-size: 0.875rem;
+        border-radius: 4px;
+        margin: 2px 0px;
+        height: 40px;
+    }
+
+    .container-sub .card-holder .card .bx-trash-alt{
+        font-size: 1rem;
+    }
+    .date{
+        font-size: 0.65rem;
+    }
+    .container-sub .card-holder .card input[type=checkbox]{
+        /* width: 1rem;
+        height: 1rem; */
+        margin-left: 0px;
+    }
+
+
+    .container-sub .add-new .card-new{
+        /* border-radius: 4px; */
+        height: 40px;
+    }
+
+    .container-sub .add-new .card-new .group1 input[type=text]{
+        /* margin-left: 10px;
+        padding-left: 2px;
+        width: 70%; */
+        font-size: 0.875rem;
+        height: 100%;
+    
+    }
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+        font-size: 0.875rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]{
+        font-size: 0.875rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+        font-size: 0.875rem;
+
+    }
+    .align{
+        padding: 0px 16px;
+    }
+
+  }
+  
+  /* Extra Large Devices (Large Desktops) */
+  @media (min-width: 1200px) {
+    .container-main{
+        width: 88%;
+    }
+    .center{
+        padding: 18px;
+    }
+    .top{
+        padding-top: 15%;
+    }
+
+    .container-main{
+        border-radius: 16px;
+    }
+    .container-right{
+        border-radius: 0px 16px 16px 0px;
+    }
+    .dots{
+        width: 90px;
+        padding-top: 10px;
+        padding-left: 5px;
+    }
+    .dots div{
+        height: 15px;
+        width: 15px;
+    }
+    .profile img{
+        height: 60px;
+        width: 60px;
+    }
+    .profile .name{
+        font-size:  1.325rem;
+    }
+    .profile .email{
+        font-size: 0.9rem;
+    }
+    .profile div{
+        padding-left: 15px;
+        max-width: 260px;
+        white-space: nowrap; /* Prevent the text from wrapping */
+        overflow: hidden; /* Hide overflowing content */
+        text-overflow: ellipsis;
+    }
+    .menu .search-holder input[type=search]{
+        font-size: 1.1rem;
+        width: 100%;
+        height: 38px;
+        border-radius: 10px;
+        padding: 4px 8px;
+    }
+    .menu .list{
+        padding-top: 10px;
+        
+    }
+    .menu .list ul li{
+        margin-top: 10px;
+        height: 40px;
+    }
+    .menu .list ul li a{
+        font-size: 1.2rem;
+        height: 40px;
+        width: 100%;
+        padding-left: 10px;
+    }
+    .menu .list ul li:hover{
+        border-radius: 10px;
+    }
+    .menu .list ul li i{
+        font-size: 1.3rem;
+    }
+    .menu .list ul li span{
+        padding-left: 12px;
+    }
+    .logout a{
+        padding-left: 12px;
+        font-size: 1.2rem;
+        height: 40px;
+    }
+    .container-sub{
+        padding-top: 5%;
+        
+    }
+    .container-sub .header h2{
+        font-size: 2.25rem;
+    }
+    .container-sub .header .buttons{
+        height: 36px;
+        width: 52px;
+        border-radius: 10px;
+    }
+    .container-sub .header .buttons div{
+        margin: 2px;
+        height: 6px;
+        width: 6px;
+    }
+    .container-sub .card-holder{
+        margin-top: 38px;
+        height: 61vh;
+        border-radius: 10px;
+    }
+    .container-sub .card-holder::-webkit-scrollbar {
+        width: 10px; /* Set the width of the scrollbar */
+        border-radius: 10px;
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
+        border-radius: 10px;
+      }
+      
+    .container-sub .card-holder::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
+    .container-sub .card-holder .card{
+        font-size: 1.125rem;
+        border-radius: 8px;
+        margin: 2px 0px;
+        height: 58px;
+    }
+    .container-sub .card-holder .card div{
+        padding-left: 25px;
+    }
+    .container-sub .card-holder .card .bx-trash-alt{
+        font-size: 1.4rem;
+    }
+    .date{
+        font-size: 0.765rem;
+    }
+    .container-sub .card-holder .card input[type=checkbox]{
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-left: 6px;
+    }
+
+    .container-sub .add-new{
+        padding-bottom: 18px;
+        padding-right: 34px;
+    }
+    .container-sub .add-new .card-new{
+        border-radius: 8px;
+        height: 58px;
+    }
+    .container-sub .add-new .card-new .group1{
+        padding-left: 16px;
+    
+    }
+    .container-sub .add-new .card-new .group1 i{
+        font-size: 1.6rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=text]{
+        margin-left: 16px;
+        padding-left: 6px;
+        width: 70%;
+        font-size: 1.3rem;
+        height: 100%;
+    
+    }
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+        font-size: 1.3rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]{
+        font-size: 1.3rem;
+    }
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+        font-size: 1.3rem;
+
+    }
+    .align{
+        padding: 0px 22px;
+    }
+
+
+  }
+  @media (min-width: 1500px){
+    .container-main{
+        width: 80%;
+    }
   }

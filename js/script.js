@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const email = document.getElementById("swal-input-email").value;
 
                 // Set default values if the user didn't enter any details
-                const finalName = name || "John Doe";
+                const finalName = name || "Mr John Doe ";
                 const finalEmail = email || "john@gmail.com";
 
                 setUserPreferences(finalName, finalEmail);
@@ -354,3 +354,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentSection = "myDay";
     displayTasks(currentSection);
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerIcon = document.getElementById('burgerIcon');
+    const containerLeft = document.getElementById('containerLeft');
+  
+    burgerIcon.addEventListener('click', function () {
+        containerLeft.classList.toggle('v-class');
+      burgerIcon.classList.toggle('cross');
+    });
+  });
+  
