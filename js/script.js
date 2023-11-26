@@ -10,6 +10,7 @@ function showDivisionsWithDelay() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('duedate').valueAsDate = new Date();
     const taskContainer = document.getElementById("TaskContainer");
     const addButton = document.querySelector(".bx-plus");
     const textInput = document.getElementById("todo");
@@ -161,10 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     }>
             <div ${task.completed ? 'class="marker done"' : 'class="marker"'}>
               <span>${task.text}</span>
-              <p class="date ${isToday(task.date) ? "today" : ""}">${isToday(task.date)
+              <p id="taskDate" class="date ${isToday(task.date) ? "today" : ""}">${isToday(task.date)
                         ? "Today"
                         : "<i class='bx bx-calendar-alt'></i> " + task.date
-                    }</p>              
+                    }</p>      
+                <input type="date" id="hiddenDatePicker" style="display: none;" />        
             </div>
             <i class="bx bx-trash-alt"></i>
           </div>
@@ -172,12 +174,12 @@ document.addEventListener("DOMContentLoaded", () => {
             )
             .join("");
 
-        var searchInput = document.getElementById("search");
+        const searchInput = document.getElementById("search");
 
         // Function to handle the search input and filter tasks
-        var handleSearch = () => {
+        const handleSearch = () => {
             toggleMenu();
-        
+            console.log(11)
             const searchText = searchInput.value.trim().toLowerCase();
             if (searchText !== "") {
                 // Filter tasks based on the search text
@@ -240,6 +242,41 @@ document.addEventListener("DOMContentLoaded", () => {
                         });
                     }
                 });
+            }
+
+            if (event.target.classList.contains("date")) {
+                const taskId = event.target.closest(".card").dataset.taskId;
+                const task = tasks.find((task) => task.id.toString() === taskId);
+        
+                if (task) {
+                    // Trigger the date picker
+                    document.getElementById('hiddenDatePicker').showPicker();
+        
+                    // Listen for changes in the date picker
+                    document.getElementById('hiddenDatePicker').addEventListener('change', function () {
+                        const selectedDate = this.value;
+        
+                        // Ask for confirmation before updating the date
+                        swal({
+                            title: "Are you sure?",
+                            text:  `Update the due date from ${task.date} to ${selectedDate}.`,
+                            icon: "info",
+                            buttons: ["Cancel", "Yes"],
+                        }).then((willChangeDate) => {
+                            if (willChangeDate) {
+                                // Update the date in local storage
+                                task.date = selectedDate;
+                                localStorage.setItem(taskId, JSON.stringify(task));
+        
+                                // Refresh the display
+                                displayTasks(currentSection);
+                            } else {
+                                // Reset the date picker if the user cancels
+                                document.getElementById('hiddenDatePicker').value = '';
+                            }
+                        });
+                    });
+                }
             }
         });
         showDivisionsWithDelay();
@@ -382,13 +419,20 @@ document.addEventListener("DOMContentLoaded", () => {
     displayProfileData();
 
 
+// Function to handle section link click and display tasks
+const handleSectionLinkClick = (section, linkElement) => {
+    displayTasks(section);
+    toggleMenu();
 
-    // Event listeners for section links
-    myDayLink.addEventListener("click", function () { displayTasks("myDay"); toggleMenu();});
-    thisWeekLink.addEventListener("click", function () { displayTasks("thisWeek"); toggleMenu();});
-    thisMonthLink.addEventListener("click", function () { displayTasks("thisMonth"); toggleMenu();});
-    otherLink.addEventListener("click", function () { displayTasks("other"); toggleMenu();});
+    // Remove the event listener for the clicked section link
+    linkElement.removeEventListener("click", () => handleSectionLinkClick(section, linkElement));
+};
 
+// Event listeners for section links
+myDayLink.addEventListener("click", function () { handleSectionLinkClick("myDay", myDayLink); });
+thisWeekLink.addEventListener("click", function () { handleSectionLinkClick("thisWeek", thisWeekLink); });
+thisMonthLink.addEventListener("click", function () { handleSectionLinkClick("thisMonth", thisMonthLink); });
+otherLink.addEventListener("click", function () { handleSectionLinkClick("other", otherLink); });
 
     let currentSection = "myDay";
     displayTasks(currentSection);
@@ -413,6 +457,8 @@ document.addEventListener("DOMContentLoaded", () => {
             burgerIcon.classList.remove('cross');
         }
     });
+
+
 
 });
 
