@@ -23,14 +23,18 @@ The To-Do List app is a simple and efficient task management tool that helps you
 ![Screenshot 2](screenshots/Screenshot_1.png)
 *Screenshot of the To-Do List app showing tasks for the "Current Week" section.*
 
-![Screenshot 2](screenshots/Screenshot_3.png)
+![Screenshot 3](screenshots/Screenshot_3.png)
 *Screenshot of the To-Do List app showing tasks for the "Current Month" section.*
 
-![Screenshot 2](screenshots/Screenshot_4.png)
+![Screenshot 4](screenshots/Screenshot_4.png)
 *Screenshot of the To-Do List app showing a confirmation pop-up for deleting a task.*
 
-![Screenshot 2](screenshots/Screenshot_5.png)
+![Screenshot 5](screenshots/Screenshot_5.png)
 *Screenshot of the To-Do List app showing tasks that match the search results.*
+
+![Screenshot 6](screenshots/Screenshot_6.png)
+
+*Screenshot of the To-Do List app on Mobile device.*
 
 ## How to Use 📖
 
@@ -44,16 +48,21 @@ The To-Do List app is a simple and efficient task management tool that helps you
 
 5. **Search Function**: You can search for specific tasks by typing keywords in the search box and pressing Enter. The app will filter and display tasks that match the search query and the section currently selected.
 
-6. **Updating Profile:** The app fetches profile data from the "data.txt" file. To update the profile details, modify the "Your_name" and "Your_email" values in the "data.txt" file and save the changes.
+6. **Updating Profile:** Once you load the page, you will be prompted to create the profile using name and email. This will be stored in local storage.
 
 ## Important Notes ⚠️
 
-- This app is for demonstration purposes and may not include data persistence across sessions.
-- For security reasons, closing the main browser window programmatically is not allowed.
+
 - Please ensure to fill both the task description and due date fields before adding a new task.
 - Tasks are sorted based on due dates in ascending order.
-- This app is not optimized for mobile devices.
+- This app is completely responsive.
 - For the app to work properly, you need to host it on a localhost or a server. Simply opening the index file as a web page won't provide the required functionality.
+
+
+## Try it Online 💻
+
+You can try the To Do List application online by following [this link](https://abkrishna.me/To-Do-List/).
+
 
 ## Feedback and Support 💌
 
