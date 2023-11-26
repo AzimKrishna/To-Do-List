@@ -277,16 +277,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     const logoutLink = document.getElementById("logoutLink");
-    logoutLink.addEventListener("click", (event) => {
-        event.preventDefault();
 
-        // Remove user preferences from local storage
-        localStorage.removeItem("userPreferences");
-
-        // Redirect to about:blank or any other destination as needed
-        window.location.href = "about:blank";
+    logoutLink.addEventListener("click", () => {
+        swal({
+            title: "Are you sure?",
+            text: "Logging out will delete your profile name and email.",
+            icon: "warning",
+            buttons: ["Cancel", "Logout"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                // User clicked "Logout"
+                // Remove user preferences from local storage
+                localStorage.removeItem("userPreferences");
+    
+                // Refresh the current page
+                window.location.reload();
+            } else {
+                // User clicked "Cancel"
+                // Do nothing or handle accordingly
+            }
+        });
     });
-
+    
     function getUserPreferences() {
         const storedPreferences = localStorage.getItem("userPreferences");
         const defaultPreferences = {
