@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-} 
-html{
+}
+
+html {
     scroll-behavior: smooth;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -73,34 +77,41 @@ html, body {
         transform: rotate(-360deg);
     }
 }
-.done{
+
+.done {
     text-decoration: line-through;
-	color: #424242;
+    color: #424242;
 }
-.date{
+
+.date {
     font-size: 8px;
     color: #666666;
 }
+
 .today {
     color: #8497ef;
 }
-.center{
+
+.center {
     padding: 12px;
 }
-.top{
+
+.top {
     padding-top: 15%;
 }
-.align{
+
+.align {
     padding: 0px 15px;
 }
+
 .form__group {
     position: relative;
     padding: 20px 0 0;
     width: 100%;
     max-width: 95%;
-  }
-  
-  .form__field {
+}
+
+.form__field {
     font-family: inherit;
     width: 100%;
     border: none;
@@ -111,19 +122,19 @@ html, body {
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
-  }
-  
-  .form__field::placeholder {
+}
+
+.form__field::placeholder {
     color: transparent;
-  }
-  
-  .form__field:placeholder-shown ~ .form__label {
+}
+
+.form__field:placeholder-shown~.form__label {
     font-size: 17px;
     cursor: text;
     top: 20px;
-  }
-  
-  .form__label {
+}
+
+.form__label {
     position: absolute;
     top: 0;
     display: block;
@@ -131,17 +142,17 @@ html, body {
     font-size: 17px;
     color: #9b9b9b;
     pointer-events: none;
-  }
-  
-  .form__field:focus {
+}
+
+.form__field:focus {
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
     border-image: linear-gradient(to right, #116399, #38caef);
     border-image-slice: 1;
-  }
-  
-  .form__field:focus ~ .form__label {
+}
+
+.form__field:focus~.form__label {
     position: absolute;
     top: 0;
     display: block;
@@ -149,17 +160,20 @@ html, body {
     font-size: 17px;
     color: #38caef;
     font-weight: 700;
-  }
-  
-  /* reset input */
-  .form__field:required, .form__field:invalid {
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
     box-shadow: none;
-  }
+}
+
 /* universal properties */
-.hamburger-container{
+.hamburger-container {
     display: none;
 }
-.home{
+
+.home {
     height: 100%;
     width: 100%;
     display: flex;
@@ -171,24 +185,27 @@ html, body {
     background-size: cover;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/bg.jpg");
 }
-.container-main{
+
+.container-main {
     height: 85vh;
     border: 1px solid #666666;
-    width:75%;
+    width: 75%;
     background-color: #E7E8E8;
     border-radius: 12px;
-    -webkit-box-shadow: 9px 10px 28px 1px rgba(0,0,0,0.31);
-    -moz-box-shadow: 9px 10px 28px 1px rgba(0,0,0,0.31);
-    box-shadow: 9px 10px 28px 1px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 9px 10px 28px 1px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 9px 10px 28px 1px rgba(0, 0, 0, 0.31);
+    box-shadow: 9px 10px 28px 1px rgba(0, 0, 0, 0.31);
     display: flex;
-    
+
 }
-.container-left{
+
+.container-left {
     width: 25%;
     position: relative;
     border-right: 1px solid rgb(200, 200, 200);
 }
-.container-right{
+
+.container-right {
     position: relative;
     background: url("../img/container-bg.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/container-bg.jpg");
@@ -196,7 +213,8 @@ html, body {
     width: 75%;
     border-radius: 0px 12px 12px 0px;
 }
-.dots{
+
+.dots {
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -204,49 +222,65 @@ html, body {
     padding-top: 7px;
     padding-left: 4px;
 }
-.dots div{
+
+.dots div {
     height: 10px;
     border-radius: 50%;
     width: 10px;
     border: 1px solid #aaaaaa73;
 }
-#d1{
+
+#d1 {
     background-color: #FF605C;
     cursor: pointer;
 }
-#d2{
+
+#d2 {
     background-color: #FFBD44;
     cursor: pointer;
 }
-#d3{
+
+#d3 {
     background-color: #00CA4E;
     cursor: pointer;
 }
 
-.profile{
+.profile {
     display: flex;
     color: #3a3a3a;
 }
-.profile img{
+
+.profile img {
     height: 40px;
     width: 40px;
     border-radius: 50%;
     cursor: pointer;
 }
-.profile .name{
-    font-size:  14px;
+
+.profile .name {
+    font-size: 14px;
     font-weight: 500;
 }
-.profile .email{
+
+.profile .email {
     font-size: 10px;
 }
-.profile div{
+
+.profile div {
     padding-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.menu .search-holder input[type=search]{
+.profile div  p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.menu .search-holder input[type=search] {
     background-color: #DADBDB;
     border: none;
     font-size: 12px;
@@ -255,16 +289,19 @@ html, body {
     border-radius: 6px;
     padding: 2px 6px;
 }
-.menu .list{
+
+.menu .list {
     padding-top: 5px;
-    
+
 }
-.menu .list ul li{
+
+.menu .list ul li {
     list-style: none;
     margin-top: 8px;
     height: 25px;
 }
-.menu .list ul li a{
+
+.menu .list ul li a {
     display: flex;
     font-size: 13px;
     height: 25px;
@@ -274,36 +311,44 @@ html, body {
     text-decoration: none;
     color: #3a3a3a;
 }
-.menu .list ul li:hover{
+
+.menu .list ul li:hover {
     background-color: #DADBDB;
     border-radius: 6px;
 }
-.menu .list ul li i{
+
+.menu .list ul li i {
     font-size: 14px;
     font-weight: 550;
 }
-.menu .list ul li span{
+
+.menu .list ul li span {
     padding-left: 8px;
 }
-#i1{
+
+#i1 {
     color: #bb0092;
 }
-#i2{
+
+#i2 {
     color: #2e8b59;
 }
-#i3{
+
+#i3 {
     color: #9e6e20;
 }
-#i4{
+
+#i4 {
     color: #4c55d6;
 }
 
-.logout{
+.logout {
     position: absolute;
     width: 100%;
     bottom: 0;
 }
-.logout a{
+
+.logout a {
     display: flex;
     padding-left: 8px;
     align-items: center;
@@ -312,22 +357,27 @@ html, body {
     height: 25px;
     color: #000000;
 }
-.logout a span{
+
+.logout a span {
     padding-left: 8px;
 }
-.container-sub{
+
+.container-sub {
     padding-top: 5%;
-    
+
 }
-.container-sub .header{
+
+.container-sub .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.container-sub .header h2{
+
+.container-sub .header h2 {
     color: rgb(255, 255, 255);
 }
-.container-sub .header .buttons{
+
+.container-sub .header .buttons {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -337,39 +387,47 @@ html, body {
     width: 35px;
     border-radius: 6px;
 }
-.container-sub .header .buttons div{
+
+.container-sub .header .buttons div {
     background-color: rgb(255, 255, 255);
     margin: 1px;
     height: 4px;
     width: 4px;
     border-radius: 50%;
 }
-.container-sub .card-holder{
+
+.container-sub .card-holder {
     margin-top: 25px;
     height: 61vh;
     border-radius: 6px;
     overflow: auto;
 }
+
 .container-sub .card-holder::-webkit-scrollbar {
-    width: 8px; /* Set the width of the scrollbar */
+    width: 8px;
+    /* Set the width of the scrollbar */
     border-radius: 6px;
-  }
-  
+}
+
 .container-sub .card-holder::-webkit-scrollbar-thumb {
-    background-color: #888; /* Set the color of the scrollbar thumb */
+    background-color: #888;
+    /* Set the color of the scrollbar thumb */
     border-radius: 6px;
-  }
-  
+}
+
 .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Set the color of the scrollbar thumb on hover */
+    background-color: #555;
+    /* Set the color of the scrollbar thumb on hover */
     border-radius: 6px;
-  }
-  
+}
+
 .container-sub .card-holder::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Set the color of the scrollbar track */
+    background-color: #f1f1f1;
+    /* Set the color of the scrollbar track */
     border-radius: 6px;
-  }
-.container-sub .card-holder .card{
+}
+
+.container-sub .card-holder .card {
     display: flex;
     align-items: center;
     background-color: #FFFFFF;
@@ -378,32 +436,48 @@ html, body {
     border-radius: 4px;
     margin: 1px 0px;
     height: 38px;
-    opacity: 0; 
-    transition: opacity 0.5s ease-in; 
+    max-height: 150px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
 }
+
 @keyframes fadeIn {
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-.container-sub .card-holder .card div{
+}
+
+.container-sub .card-holder .card div {
     padding-left: 15px;
 }
-.container-sub .card-holder .card .bx-trash-alt{
+
+.container-sub .card-holder .card .marker span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+.container-sub .card-holder .card .bx-trash-alt {
     margin-left: auto;
     font-size: 15px;
 }
-.container-sub .card-holder .card input[type=checkbox], .container-sub .card-holder .card  i{
+
+.container-sub .card-holder .card input[type=checkbox],
+.container-sub .card-holder .card i {
     cursor: pointer;
 }
-.container-sub .add-new{
+
+.container-sub .add-new {
     position: absolute;
     bottom: 0;
     width: 100%;
     padding-bottom: 12px;
     padding-right: 24px;
 }
-.container-sub .add-new .card-new{
+
+.container-sub .add-new .card-new {
     background-color: #1f1f1fd8;
     border-radius: 4px;
     height: 35px;
@@ -411,7 +485,8 @@ html, body {
     align-items: center;
     width: 100%;
 }
-.container-sub .add-new .card-new .group1{
+
+.container-sub .add-new .card-new .group1 {
     display: flex;
     padding-left: 8px;
     align-items: center;
@@ -421,10 +496,12 @@ html, body {
     color: #FFFFFF;
 
 }
-.container-sub .add-new .card-new .group1 i{
+
+.container-sub .add-new .card-new .group1 i {
     cursor: pointer;
 }
-.container-sub .add-new .card-new .group1 input[type=text]{
+
+.container-sub .add-new .card-new .group1 input[type=text] {
     margin-left: 10px;
     padding-left: 2px;
     background-color: transparent;
@@ -435,282 +512,67 @@ html, body {
     color: #FFFFFF;
 
 }
+
 .container-sub .add-new .card-new .group1 input[type=text]:focus {
     outline: none;
 }
-.container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+
+.container-sub .add-new .card-new .group1 input[type=text]::placeholder {
     font-size: 14px;
     color: #FFFFFF;
 }
-.container-sub .add-new .card-new .group1 input[type=text]:focus::placeholder{
+
+.container-sub .add-new .card-new .group1 input[type=text]:focus::placeholder {
     color: #dddddd86;
 }
-.container-sub .add-new .card-new .group1 div{
+
+.container-sub .add-new .card-new .group1 div {
     display: flex;
     align-items: center;
 }
-.container-sub .add-new .card-new .group1 input[type=date]{
+
+.container-sub .add-new .card-new .group1 input[type=date] {
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 14px;
     color: #dddddd86;
 }
+
 .container-sub .add-new .card-new .group1 input[type=date]:focus {
     outline: none;
 }
-.container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+
+.container-sub .add-new .card-new .group1 input[type=date]::placeholder {
     font-size: 14px;
     color: #dddddd86;
 }
+
 .container-sub .add-new .card-new .group1 input[type="date"]::-webkit-calendar-picker-indicator {
     /* Change the color of the calendar icon in Chrome, Safari, and Opera */
     filter: invert(1);
     opacity: 1;
 }
+
 .container-sub .add-new .card-new .group1 input[type="date"]::-moz-calendar-picker-indicator {
     /* Change the color of the calendar icon in Firefox */
     filter: invert(1);
     opacity: 1;
-  }
+}
 
 
 
-  /* Default styles for all devices */
+/* Default styles for all devices */
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
-    .hamburger-container{
+    .hamburger-container {
         position: relative;
         display: block;
         width: 100%;
         height: 15px;
-       }
-        .burger {
-            position: absolute;
-            cursor: pointer;
-            top: 100%;
-            left: 2%;
-            display: block;
-            z-index: 888;
-        }
-        .line {
-            width: 33px;
-            height: 4px;
-            background-color: #1f1f1f93;
-            margin: 3px 3px;
-            transition: transform 0.3s;
-        }
-        .burger.cross .line:nth-child(1) {
-            transform: rotate(-43deg) translate(-5px, 5px);
-        }
-    
-        .burger.cross .line:nth-child(2) {
-            opacity: 0;
-        }
-    
-        .burger.cross .line:nth-child(3) {
-            transform: rotate(43deg) translate(-5px, -5px);
-        }
-    
-    
-        .container-main{
-            width: 96%;
-            height: 90vh;
-            position: relative;
-            /* border-radius: 12px; */
-            overflow: hidden;
-        }
-        .center{
-            padding: 12px;
-        }
-        .top{
-            padding-top: 15%;
-        }
-    
-        .container-left{
-            left: -100%;
-            bottom: 0;
-            top: 0;
-            position: absolute;
-            background-color: #E7E8E8;
-            z-index: 666;
-            width: 70%;
-            transition: left 0.3s ease;
-        }
-        .v-class{
-            left: 0%;
-        }
-        .container-right{
-            /* border-radius: 0px 12px 12px 0px; */
-            width: 100%;
-        }
-        .dots{
-            display: none;
-        }
-        .profile {
-            margin-top: 9%;
-        }
-        .profile .name{
-            font-size:  1rem;
-        }
-        .profile .email{
-            font-size: 0.7rem;
-        }
-        .profile div{
-            padding-left: 8px;
-            max-width: 220px;
-            white-space: nowrap; /* Prevent the text from wrapping */
-            overflow: hidden; /* Hide overflowing content */
-            text-overflow: ellipsis;
-        }
-        .menu .search-holder input[type=search]{
-            font-size: 0.9rem;
-            width: 100%;
-            height: 35px;
-            /* border-radius: 6px;
-            padding: 2px 6px; */
-        }
-        .menu .list{
-            padding-top: 6px;
-            
-        }
-        .menu .list ul li{
-            /* margin-top: 8px; */
-            height: 35px;
-        }
-        .menu .list ul li a{
-            font-size: 0.9rem;
-            height: 35px;
-            width: 100%;
-            /* padding-left: 8px; */
-        }
-        .menu .list ul li:hover{
-            /* border-radius: 6px; */
-        }
-        .menu .list ul li i{
-            font-size: 1rem;
-        }
-        .menu .list ul li span{
-            /* padding-left: 8px; */
-        }
-        .logout a{
-            /* padding-left: 8px; */
-            font-size: 0.9rem;
-            height: 35px;
-        }
-        .container-sub{
-            padding-top: 8%;
-            
-        }
-        .container-sub .header h2{
-            font-size: 1.5rem;
-        }
-        .container-sub .header .buttons{
-            height: 30px;
-            width: 45px;
-            margin-top: -19%;
-            /* border-radius: 6px; */
-        }
-        .container-sub .header .buttons div{
-            margin: 2px;
-            /* height: 4px;
-            width: 4px; */
-        }
-        .container-sub .card-holder{
-            margin-top: 28px;
-            /* height: 61vh; */
-            /* border-radius: 6px; */
-        }
-        .container-sub .card-holder::-webkit-scrollbar {
-            /* width: 8px; Set the width of the scrollbar */
-            /* border-radius: 6px; */
-          }
-          
-        .container-sub .card-holder::-webkit-scrollbar-thumb {
-            /* border-radius: 6px; */
-          }
-          
-        .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
-            /* border-radius: 6px; */
-          }
-          
-        .container-sub .card-holder::-webkit-scrollbar-track {
-            /* border-radius: 6px; */
-          }
-        .container-sub .card-holder .card{
-            font-size: 0.875rem;
-            border-radius: 4px;
-            margin: 2px 0px;
-            height: 48px;
-        }
-        .container-sub .card-holder .card div{
-            /* padding-left: 15px; */
-        }
-        .container-sub .card-holder .card .bx-trash-alt{
-            font-size: 1rem;
-        }
-        .date{
-            font-size: 0.65rem;
-        }
-        .container-sub .card-holder .card input[type=checkbox]{
-            /* width: 1rem;
-            height: 1rem; */
-            margin-left: 0px;
-        }
-    
-        .container-sub .add-new{
-            /* padding-bottom: 12px;
-            padding-right: 24px; */
-        }
-        .container-sub .add-new .card-new{
-            /* border-radius: 4px; */
-            height: 48px;
-        }
-        .container-sub .add-new .card-new .group1{
-            /* padding-left: 8px; */
-        
-        }
-        .container-sub .add-new .card-new .group1 i{
-            /* font-size: 1.6rem; */
-        }
-        .container-sub .add-new .card-new .group1 input[type=text]{
-            /* margin-left: 10px;
-            padding-left: 2px;
-            width: 70%; */
-            font-size: 0.875rem;
-            width: 75%;
-            height: 100%;
-        
-        }
-        .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
-            font-size: 0.875rem;
-        }
-        .container-sub .add-new .card-new .group1 input[type=date]{
-            font-size: 0.7rem;
-            border: 1px solid rgba(255, 255, 255, 0.345);
-            border-radius: 6px;
-            /* width: 100%; */
-            width: 90px;
-        }
-        .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
-            font-size: 0.875rem;
-    
-        }
-        .align{
-            padding: 0px 16px;
-        }
-    
-      }
-      
-  /* Small Devices (Tablets) */
-  @media (min-width: 576px) and (max-width: 767px) {
-   .hamburger-container{
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 15px;
-   }
+    }
+
     .burger {
         position: absolute;
         cursor: pointer;
@@ -719,6 +581,7 @@ html, body {
         display: block;
         z-index: 888;
     }
+
     .line {
         width: 33px;
         height: 4px;
@@ -726,6 +589,7 @@ html, body {
         margin: 3px 3px;
         transition: transform 0.3s;
     }
+
     .burger.cross .line:nth-child(1) {
         transform: rotate(-43deg) translate(-5px, 5px);
     }
@@ -739,21 +603,205 @@ html, body {
     }
 
 
-    .container-main{
+    .container-main {
+        width: 96%;
+        height: 90vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .container-left {
+        left: -100%;
+        bottom: 0;
+        top: 0;
+        position: absolute;
+        background-color: #E7E8E8;
+        z-index: 666;
+        width: 70%;
+        transition: left 0.3s ease;
+    }
+
+    .v-class {
+        left: 0%;
+    }
+
+    .container-right {
+        width: 100%;
+    }
+
+    .dots {
+        display: none;
+    }
+
+    .profile {
+        margin-top: 9%;
+    }
+
+    .profile .name {
+        font-size: 1rem;
+    }
+
+    .profile .email {
+        font-size: 0.7rem;
+    }
+
+    .profile div {
+        padding-left: 8px;
+        max-width: 220px;
+    }
+
+    .menu .search-holder input[type=search] {
+        font-size: 0.9rem;
+        width: 100%;
+        height: 35px;
+    }
+
+    .menu .list {
+        padding-top: 6px;
+
+    }
+
+    .menu .list ul li {
+        height: 35px;
+    }
+
+    .menu .list ul li a {
+        font-size: 0.9rem;
+        height: 35px;
+    }
+
+    .menu .list ul li i {
+        font-size: 1rem;
+    }
+
+    .logout a {
+        font-size: 0.9rem;
+        height: 35px;
+    }
+
+    .container-sub {
+        padding-top: 8%;
+
+    }
+
+    .container-sub .header h2 {
+        font-size: 1.5rem;
+    }
+
+    .container-sub .header .buttons {
+        height: 30px;
+        width: 45px;
+        margin-top: -19%;
+    }
+
+    .container-sub .header .buttons div {
+        margin: 2px;
+    }
+
+    .container-sub .card-holder {
+        margin-top: 28px;
+    }
+
+    .container-sub .card-holder .card {
+        font-size: 0.875rem;
+        border-radius: 4px;
+        margin: 2px 0px;
+        height: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .container-sub .card-holder .card .bx-trash-alt {
+        font-size: 1rem;
+    }
+
+    .date {
+        font-size: 0.65rem;
+    }
+
+    .container-sub .card-holder .card input[type=checkbox] {
+        margin-left: 0px;
+    }
+
+    .container-sub .add-new .card-new {
+        height: 48px;
+    }
+
+    .container-sub .add-new .card-new .group1 input[type=text] {
+        font-size: 0.875rem;
+        width: 75%;
+        height: 100%;
+
+    }
+
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder {
+        font-size: 0.875rem;
+    }
+
+    .container-sub .add-new .card-new .group1 input[type=date] {
+        font-size: 0.7rem;
+        border: 1px solid rgba(255, 255, 255, 0.345);
+        border-radius: 6px;
+        width: 90px;
+    }
+
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder {
+        font-size: 0.875rem;
+    }
+
+    .align {
+        padding: 0px 16px;
+    }
+
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .hamburger-container {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 15px;
+    }
+
+    .burger {
+        position: absolute;
+        cursor: pointer;
+        top: 100%;
+        left: 2%;
+        display: block;
+        z-index: 888;
+    }
+
+    .line {
+        width: 33px;
+        height: 4px;
+        background-color: #1f1f1f93;
+        margin: 3px 3px;
+        transition: transform 0.3s;
+    }
+
+    .burger.cross .line:nth-child(1) {
+        transform: rotate(-43deg) translate(-5px, 5px);
+    }
+
+    .burger.cross .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.cross .line:nth-child(3) {
+        transform: rotate(43deg) translate(-5px, -5px);
+    }
+
+
+    .container-main {
         width: 96%;
         height: 87vh;
         position: relative;
-        /* border-radius: 12px; */
         overflow: hidden;
     }
-    .center{
-        padding: 12px;
-    }
-    .top{
-        padding-top: 15%;
-    }
 
-    .container-left{
+    .container-left {
         left: -100%;
         bottom: 0;
         top: 0;
@@ -763,672 +811,664 @@ html, body {
         width: 45%;
         transition: left 0.3s ease;
     }
-    .v-class{
+
+    .v-class {
         left: 0%;
     }
-    .container-right{
-        /* border-radius: 0px 12px 12px 0px; */
+
+    .container-right {
         width: 100%;
     }
-    .dots{
+
+    .dots {
         display: none;
     }
+
     .profile {
         margin-top: 11%;
     }
-    .profile .name{
-        font-size:  1rem;
-    }
-    .profile .email{
-        font-size: 0.7rem;
-    }
-    .profile div{
-        padding-left: 8px;
-        max-width: 220px;
-        white-space: nowrap; /* Prevent the text from wrapping */
-        overflow: hidden; /* Hide overflowing content */
-        text-overflow: ellipsis;
-    }
-    .menu .search-holder input[type=search]{
-        font-size: 0.9rem;
-        background-color: #DADBDB;
-        width: 100%;
-        height: 35px;
-        /* border-radius: 6px;
-        padding: 2px 6px; */
-    }
-    .menu .list{
-        padding-top: 6px;
-        
-    }
-    .menu .list ul li{
-        /* margin-top: 8px; */
-        height: 35px;
-    }
-    .menu .list ul li a{
-        font-size: 0.9rem;
-        height: 35px;
-        width: 100%;
-        /* padding-left: 8px; */
-    }
-    .menu .list ul li:hover{
-        /* border-radius: 6px; */
-    }
-    .menu .list ul li i{
+
+    .profile .name {
         font-size: 1rem;
     }
-    .menu .list ul li span{
-        /* padding-left: 8px; */
+
+    .profile .email {
+        font-size: 0.7rem;
     }
-    .logout a{
-        /* padding-left: 8px; */
+
+    .profile div {
+        padding-left: 8px;
+        max-width: 220px;
+    }
+
+    .menu .search-holder input[type=search] {
+        font-size: 0.9rem;
+        background-color: #DADBDB;
+        height: 35px;
+    }
+
+    .menu .list {
+        padding-top: 6px;
+
+    }
+
+    .menu .list ul li {
+        height: 35px;
+    }
+
+    .menu .list ul li a {
+        font-size: 0.9rem;
+        height: 35px;
+        width: 100%;
+
+    }
+
+    .menu .list ul li i {
+        font-size: 1rem;
+    }
+
+
+
+    .logout a {
         font-size: 0.9rem;
         height: 35px;
     }
-    .container-sub{
+
+    .container-sub {
         padding-top: 8%;
-        
+
     }
-    .container-sub .header h2{
+
+    .container-sub .header h2 {
         font-size: 1.5rem;
     }
-    .container-sub .header .buttons{
+
+    .container-sub .header .buttons {
         height: 30px;
         width: 45px;
         margin-top: -19%;
-        /* border-radius: 6px; */
     }
-    .container-sub .header .buttons div{
+
+    .container-sub .header .buttons div {
         margin: 2px;
-        /* height: 4px;
-        width: 4px; */
+
     }
-    .container-sub .card-holder{
+
+    .container-sub .card-holder {
         margin-top: 28px;
-        /* height: 61vh; */
-        /* border-radius: 6px; */
+
     }
-    .container-sub .card-holder::-webkit-scrollbar {
-        /* width: 8px; Set the width of the scrollbar */
-        /* border-radius: 6px; */
-      }
-      
-    .container-sub .card-holder::-webkit-scrollbar-thumb {
-        /* border-radius: 6px; */
-      }
-      
-    .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
-        /* border-radius: 6px; */
-      }
-      
-    .container-sub .card-holder::-webkit-scrollbar-track {
-        /* border-radius: 6px; */
-      }
-    .container-sub .card-holder .card{
+
+    .container-sub .card-holder .card {
         font-size: 0.875rem;
         border-radius: 4px;
         margin: 2px 0px;
-        height: 45px;
+        height: auto;
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
-    .container-sub .card-holder .card div{
-        /* padding-left: 15px; */
-    }
-    .container-sub .card-holder .card .bx-trash-alt{
+
+
+    .container-sub .card-holder .card .bx-trash-alt {
         font-size: 1rem;
     }
-    .date{
+
+    .date {
         font-size: 0.65rem;
     }
-    .container-sub .card-holder .card input[type=checkbox]{
-        /* width: 1rem;
-        height: 1rem; */
+
+    .container-sub .card-holder .card input[type=checkbox] {
         margin-left: 0px;
     }
 
-    .container-sub .add-new{
-        /* padding-bottom: 12px;
-        padding-right: 24px; */
-    }
-    .container-sub .add-new .card-new{
-        /* border-radius: 4px; */
+
+    .container-sub .add-new .card-new {
         height: 45px;
     }
-    .container-sub .add-new .card-new .group1{
-        /* padding-left: 8px; */
-    
-    }
-    .container-sub .add-new .card-new .group1 i{
-        /* font-size: 1.6rem; */
-    }
-    .container-sub .add-new .card-new .group1 input[type=text]{
-        /* margin-left: 10px;
-        padding-left: 2px;
-        width: 70%; */
+
+
+
+    .container-sub .add-new .card-new .group1 input[type=text] {
+
         font-size: 0.875rem;
         height: 100%;
         width: 75%;
-    
+
     }
-    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder {
         font-size: 0.875rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]{
+
+    .container-sub .add-new .card-new .group1 input[type=date] {
         font-size: 0.875rem;
         border: 1px solid rgba(255, 255, 255, 0.345);
         border-radius: 6px;
-        /* width: 100%; */
         width: 110px;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder {
         font-size: 0.875rem;
 
     }
-    .align{
+
+    .align {
         padding: 0px 16px;
     }
 
-  }
-  
-  /* Medium Devices (Laptops) */
-  @media (min-width: 768px) and (max-width: 991px) {
-    .container-main{
+}
+
+/* Medium Devices (Laptops) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container-main {
         width: 96%;
         height: 80vh;
     }
-    .center{
-        padding: 12px;
-    }
-    .top{
-        padding-top: 15%;
-    }
-
-    .container-main{
-        /* border-radius: 12px; */
-    }
-    .container-right{
-        /* border-radius: 0px 12px 12px 0px; */
-    }
-    .dots{
+    .dots {
         width: 65px;
         padding-top: 8px;
         padding-left: 6px;
     }
-    .dots div{
+    .center {
+        padding: 12px;
+    }
+    
+    .top {
+        padding-top: 17%;
+    }
+    .dots div {
         height: 12px;
         width: 12px;
     }
-    .profile img{
-        /* height: 40px;
-        width: 40px; */
-    }
-    .profile .name{
-        font-size:  1rem;
-    }
-    .profile .email{
-        font-size: 0.7rem;
-    }
-    .profile div{
-        padding-left: 8px;
-        max-width: 220px;
-        white-space: nowrap; /* Prevent the text from wrapping */
-        overflow: hidden; /* Hide overflowing content */
-        text-overflow: ellipsis;
-    }
-    .menu .search-holder input[type=search]{
-        font-size: 0.9rem;
-        width: 100%;
-        background-color: #DADBDB;
-        height: 30px;
-        /* border-radius: 6px;
-        padding: 2px 6px; */
-    }
-    .menu .list{
-        padding-top: 6px;
-        
-    }
-    .menu .list ul li{
-        /* margin-top: 8px; */
-        height: 30px;
-    }
-    .menu .list ul li a{
-        font-size: 0.9rem;
-        height: 30px;
-        width: 100%;
-        /* padding-left: 8px; */
-    }
-    .menu .list ul li:hover{
-        /* border-radius: 6px; */
-    }
-    .menu .list ul li i{
+
+    .profile .name {
         font-size: 1rem;
     }
-    .menu .list ul li span{
-        /* padding-left: 8px; */
+
+    .profile .email {
+        font-size: 0.7rem;
     }
-    .logout a{
-        /* padding-left: 8px; */
+
+    .profile div {
+        padding-left: 8px;
+        max-width: 220px;
+
+    }
+
+    .menu .search-holder input[type=search] {
+        font-size: 0.9rem;
+        background-color: #DADBDB;
+        height: 30px;
+
+    }
+
+    .menu .list {
+        padding-top: 6px;
+
+    }
+
+    .menu .list ul li {
+        height: 30px;
+    }
+
+    .menu .list ul li a {
+        font-size: 0.9rem;
+        height: 30px;
+        width: 100%;
+    }
+
+
+    .menu .list ul li i {
+        font-size: 1rem;
+    }
+
+    .logout a {
         font-size: 0.9rem;
         height: 30px;
     }
-    .container-sub{
+
+    .container-sub {
         padding-top: 5%;
-        
+
     }
-    .container-sub .header h2{
+
+    .container-sub .header h2 {
         font-size: 1.5rem;
     }
-    .container-sub .header .buttons{
+
+    .container-sub .header .buttons {
         height: 30px;
         width: 45px;
-        /* border-radius: 6px; */
     }
-    .container-sub .header .buttons div{
+
+    .container-sub .header .buttons div {
         margin: 2px;
-        /* height: 4px;
-        width: 4px; */
+
     }
-    .container-sub .card-holder{
+
+    .container-sub .card-holder {
         margin-top: 28px;
-        /* height: 61vh; */
-        /* border-radius: 6px; */
+
     }
-    .container-sub .card-holder::-webkit-scrollbar {
-        /* width: 8px; Set the width of the scrollbar */
-        /* border-radius: 6px; */
-      }
-      
-    .container-sub .card-holder::-webkit-scrollbar-thumb {
-        /* border-radius: 6px; */
-      }
-      
-    .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
-        /* border-radius: 6px; */
-      }
-      
-    .container-sub .card-holder::-webkit-scrollbar-track {
-        /* border-radius: 6px; */
-      }
-    .container-sub .card-holder .card{
+
+
+
+
+    .container-sub .card-holder .card {
         font-size: 0.875rem;
         border-radius: 4px;
         margin: 2px 0px;
-        height: 40px;
+        height: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
-    .container-sub .card-holder .card div{
-        /* padding-left: 15px; */
-    }
-    .container-sub .card-holder .card .bx-trash-alt{
+
+
+    .container-sub .card-holder .card .bx-trash-alt {
         font-size: 1rem;
     }
-    .date{
+
+    .date {
         font-size: 0.65rem;
     }
-    .container-sub .card-holder .card input[type=checkbox]{
-        /* width: 1rem;
-        height: 1rem; */
+
+    .container-sub .card-holder .card input[type=checkbox] {
+
         margin-left: 0px;
     }
 
-    .container-sub .add-new{
-        /* padding-bottom: 12px;
-        padding-right: 24px; */
-    }
-    .container-sub .add-new .card-new{
-        /* border-radius: 4px; */
+
+    .container-sub .add-new .card-new {
+
         height: 40px;
     }
-    .container-sub .add-new .card-new .group1{
-        /* padding-left: 8px; */
-    
-    }
-    .container-sub .add-new .card-new .group1 i{
-        /* font-size: 1.6rem; */
-    }
-    .container-sub .add-new .card-new .group1 input[type=text]{
-        /* margin-left: 10px;
-        padding-left: 2px;
-        width: 70%; */
+
+
+    .container-sub .add-new .card-new .group1 input[type=text] {
+
         font-size: 0.875rem;
         height: 100%;
-    
+
     }
-    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder {
         font-size: 0.875rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]{
+
+    .container-sub .add-new .card-new .group1 input[type=date] {
         font-size: 0.875rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder {
         font-size: 0.875rem;
 
     }
-    .align{
+
+    .align {
         padding: 0px 16px;
     }
 
-  }
-  
-  /* Large Devices (Desktops) */
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .container-main{
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container-main {
         width: 96%;
         height: 80vh;
     }
-    .center{
+    .center {
         padding: 12px;
     }
-    .top{
+    
+    .top {
         padding-top: 15%;
     }
-
-
-    .dots{
+    .dots {
         width: 65px;
         padding-top: 8px;
         padding-left: 6px;
     }
-    .dots div{
+
+    .dots div {
         height: 12px;
         width: 12px;
     }
 
-    .profile .name{
-        font-size:  1rem;
-    }
-    .profile .email{
-        font-size: 0.7rem;
-    }
-    .profile div{
-        padding-left: 8px;
-        max-width: 220px;
-        white-space: nowrap; /* Prevent the text from wrapping */
-        overflow: hidden; /* Hide overflowing content */
-        text-overflow: ellipsis;
-    }
-    .menu .search-holder input[type=search]{
-        font-size: 0.9rem;
-        width: 100%;
-        background-color: #DADBDB;
-        height: 30px;
-        /* border-radius: 6px;
-        padding: 2px 6px; */
-    }
-    .menu .list{
-        padding-top: 6px;
-        
-    }
-    .menu .list ul li{
-        /* margin-top: 8px; */
-        height: 30px;
-    }
-    .menu .list ul li a{
-        font-size: 0.9rem;
-        height: 30px;
-        width: 100%;
-        /* padding-left: 8px; */
-    }
-
-    .menu .list ul li i{
+    .profile .name {
         font-size: 1rem;
     }
 
-    .logout a{
-        /* padding-left: 8px; */
+    .profile .email {
+        font-size: 0.7rem;
+    }
+
+    .profile div {
+        padding-left: 8px;
+        max-width: 220px;
+    }
+
+    .menu .search-holder input[type=search] {
+        font-size: 0.9rem;
+        background-color: #DADBDB;
+        height: 30px;
+
+    }
+
+    .menu .list {
+        padding-top: 6px;
+
+    }
+
+    .menu .list ul li {
+        height: 30px;
+    }
+
+    .menu .list ul li a {
+        font-size: 0.9rem;
+        height: 30px;
+        width: 100%;
+    }
+
+    .menu .list ul li i {
+        font-size: 1rem;
+    }
+
+    .logout a {
         font-size: 0.9rem;
         height: 30px;
     }
-    .container-sub{
+
+    .container-sub {
         padding-top: 5%;
-        
-    }
-    .container-sub .header h2{
-        font-size: 1.5rem;
-    }
-    .container-sub .header .buttons{
-        height: 30px;
-        width: 45px;
-        /* border-radius: 6px; */
-    }
-    .container-sub .header .buttons div{
-        margin: 2px;
-        /* height: 4px;
-        width: 4px; */
-    }
-    .container-sub .card-holder{
-        margin-top: 28px;
-        /* height: 61vh; */
-        /* border-radius: 6px; */
+
     }
 
-    .container-sub .card-holder .card{
+    .container-sub .header h2 {
+        font-size: 1.5rem;
+    }
+
+    .container-sub .header .buttons {
+        height: 30px;
+        width: 45px;
+    }
+
+    .container-sub .header .buttons div {
+        margin: 2px;
+
+    }
+
+    .container-sub .card-holder {
+        margin-top: 28px;
+
+    }
+
+    .container-sub .card-holder .card {
         font-size: 0.875rem;
         border-radius: 4px;
         margin: 2px 0px;
-        height: 40px;
+        height: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
-    .container-sub .card-holder .card .bx-trash-alt{
+    .container-sub .card-holder .card .bx-trash-alt {
         font-size: 1rem;
     }
-    .date{
+
+    .date {
         font-size: 0.65rem;
     }
-    .container-sub .card-holder .card input[type=checkbox]{
-        /* width: 1rem;
-        height: 1rem; */
+
+    .container-sub .card-holder .card input[type=checkbox] {
+
         margin-left: 0px;
     }
 
 
-    .container-sub .add-new .card-new{
-        /* border-radius: 4px; */
+    .container-sub .add-new .card-new {
         height: 40px;
     }
 
-    .container-sub .add-new .card-new .group1 input[type=text]{
-        /* margin-left: 10px;
-        padding-left: 2px;
-        width: 70%; */
+    .container-sub .add-new .card-new .group1 input[type=text] {
+
         font-size: 0.875rem;
         height: 100%;
-    
+
     }
-    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder {
         font-size: 0.875rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]{
+
+    .container-sub .add-new .card-new .group1 input[type=date] {
         font-size: 0.875rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder {
         font-size: 0.875rem;
 
     }
-    .align{
+
+    .align {
         padding: 0px 16px;
     }
 
-  }
-  
-  /* Extra Large Devices (Large Desktops) */
-  @media (min-width: 1200px) {
-    .container-main{
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1200px) {
+    .container-main {
         width: 88%;
     }
-    .center{
+
+    .center {
         padding: 18px;
     }
-    .top{
+    .top {
         padding-top: 15%;
     }
-
-    .container-main{
+    .container-main {
         border-radius: 16px;
     }
-    .container-right{
+
+    .container-right {
         border-radius: 0px 16px 16px 0px;
     }
-    .dots{
+
+    .dots {
         width: 90px;
         padding-top: 10px;
         padding-left: 5px;
     }
-    .dots div{
+
+    .dots div {
         height: 15px;
         width: 15px;
     }
-    .profile img{
+
+    .profile img {
         height: 60px;
         width: 60px;
     }
-    .profile .name{
-        font-size:  1.325rem;
+
+    .profile .name {
+        font-size: 1.325rem;
     }
-    .profile .email{
+
+    .profile .email {
         font-size: 0.9rem;
     }
-    .profile div{
+
+    .profile div {
         padding-left: 15px;
         max-width: 260px;
-        white-space: nowrap; /* Prevent the text from wrapping */
-        overflow: hidden; /* Hide overflowing content */
-        text-overflow: ellipsis;
+
     }
-    .menu .search-holder input[type=search]{
+
+    .menu .search-holder input[type=search] {
         font-size: 1.1rem;
-        width: 100%;
         background-color: #DADBDB;
         height: 38px;
         border-radius: 10px;
         padding: 4px 8px;
     }
-    .menu .list{
+
+    .menu .list {
         padding-top: 10px;
-        
+
     }
-    .menu .list ul li{
+
+    .menu .list ul li {
         margin-top: 10px;
         height: 40px;
     }
-    .menu .list ul li a{
+
+    .menu .list ul li a {
         font-size: 1.2rem;
         height: 40px;
         width: 100%;
         padding-left: 10px;
     }
-    .menu .list ul li:hover{
+
+    .menu .list ul li:hover {
         border-radius: 10px;
     }
-    .menu .list ul li i{
+
+    .menu .list ul li i {
         font-size: 1.3rem;
     }
-    .menu .list ul li span{
+
+    .menu .list ul li span {
         padding-left: 12px;
     }
-    .logout a{
+
+    .logout a {
         padding-left: 12px;
         font-size: 1.2rem;
         height: 40px;
     }
-    .container-sub{
+
+    .container-sub {
         padding-top: 5%;
-        
+
     }
-    .container-sub .header h2{
+
+    .container-sub .header h2 {
         font-size: 2.25rem;
     }
-    .container-sub .header .buttons{
+
+    .container-sub .header .buttons {
         height: 36px;
         width: 52px;
         border-radius: 10px;
     }
-    .container-sub .header .buttons div{
+
+    .container-sub .header .buttons div {
         margin: 2px;
         height: 6px;
         width: 6px;
     }
-    .container-sub .card-holder{
+
+    .container-sub .card-holder {
         margin-top: 38px;
         height: 61vh;
         border-radius: 10px;
     }
+
     .container-sub .card-holder::-webkit-scrollbar {
-        width: 10px; /* Set the width of the scrollbar */
+        width: 10px;
         border-radius: 10px;
-      }
-      
+    }
+
     .container-sub .card-holder::-webkit-scrollbar-thumb {
         border-radius: 10px;
-      }
-      
+    }
+
     .container-sub .card-holder::-webkit-scrollbar-thumb:hover {
         border-radius: 10px;
-      }
-      
+    }
+
     .container-sub .card-holder::-webkit-scrollbar-track {
         border-radius: 10px;
-      }
-    .container-sub .card-holder .card{
+    }
+
+    .container-sub .card-holder .card {
         font-size: 1.125rem;
         border-radius: 8px;
         margin: 2px 0px;
-        height: 58px;
+        height: auto;
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
-    .container-sub .card-holder .card div{
+
+    .container-sub .card-holder .card div {
         padding-left: 25px;
     }
-    .container-sub .card-holder .card .bx-trash-alt{
+
+    .container-sub .card-holder .card .bx-trash-alt {
         font-size: 1.4rem;
     }
-    .date{
+
+    .date {
         font-size: 0.765rem;
     }
-    .container-sub .card-holder .card input[type=checkbox]{
+
+    .container-sub .card-holder .card input[type=checkbox] {
         width: 1.1rem;
         height: 1.1rem;
         margin-left: 6px;
     }
 
-    .container-sub .add-new{
+    .container-sub .add-new {
         padding-bottom: 18px;
         padding-right: 34px;
     }
-    .container-sub .add-new .card-new{
+
+    .container-sub .add-new .card-new {
         border-radius: 8px;
         height: 58px;
     }
-    .container-sub .add-new .card-new .group1{
+
+    .container-sub .add-new .card-new .group1 {
         padding-left: 16px;
-    
+
     }
-    .container-sub .add-new .card-new .group1 i{
+
+    .container-sub .add-new .card-new .group1 i {
         font-size: 1.6rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=text]{
+
+    .container-sub .add-new .card-new .group1 input[type=text] {
         margin-left: 16px;
         padding-left: 6px;
         width: 70%;
         font-size: 1.3rem;
         height: 100%;
-    
+
     }
-    .container-sub .add-new .card-new .group1 input[type=text]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=text]::placeholder {
         font-size: 1.3rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]{
+
+    .container-sub .add-new .card-new .group1 input[type=date] {
         font-size: 1.3rem;
     }
-    .container-sub .add-new .card-new .group1 input[type=date]::placeholder{
+
+    .container-sub .add-new .card-new .group1 input[type=date]::placeholder {
         font-size: 1.3rem;
 
     }
-    .align{
+
+    .align {
         padding: 0px 22px;
     }
 
 
-  }
-  @media (min-width: 1500px){
-    .container-main{
+}
+
+@media (min-width: 1500px) {
+    .container-main {
         width: 80%;
     }
-  }
+}
