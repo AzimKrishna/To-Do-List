@@ -179,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Function to handle the search input and filter tasks
         const handleSearch = () => {
             toggleMenu();
-            console.log(11)
             const searchText = searchInput.value.trim().toLowerCase();
             if (searchText !== "") {
                 // Filter tasks based on the search text
