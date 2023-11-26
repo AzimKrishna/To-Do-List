@@ -89,8 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to retrieve tasks from LocalStorage and display them
     const displayTasks = (section, tasksToDisplay) => {
         currentSection = section;
-        const tasksData = Object.values(localStorage);
-        const tasks = tasksData.map((taskData) => JSON.parse(taskData));
+        const tasks = Object.entries(localStorage)
+        .filter(([key]) => key !== "userPreferences")
+        .map(([, tasks]) => JSON.parse(tasks));
         const tasksToRender = tasksToDisplay || tasks;
         tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
         const todayDate = new Date().toLocaleDateString("en-CA");
@@ -171,10 +172,12 @@ document.addEventListener("DOMContentLoaded", () => {
             )
             .join("");
 
-        const searchInput = document.getElementById("search");
+        var searchInput = document.getElementById("search");
 
         // Function to handle the search input and filter tasks
-        const handleSearch = () => {
+        var handleSearch = () => {
+            toggleMenu();
+        
             const searchText = searchInput.value.trim().toLowerCase();
             if (searchText !== "") {
                 // Filter tasks based on the search text
@@ -187,13 +190,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 displayTasks(currentSection);
             }
         };
-
-        // Add keypress event listener to the search input
-        searchInput.addEventListener("keypress", (event) => {
+        
+        
+        // Add keydown event listener to the search input
+        const keydownHandler = (event) => {
             if (event.key === "Enter") {
                 handleSearch();
+                searchInput.removeEventListener("keydown", keydownHandler);
             }
-        });
+        };
+        
+        // Add keydown event listener to the search input
+        searchInput.addEventListener("keydown", keydownHandler);
+        
+        
+        
 
         // Attach event listener to the parent container
         taskContainer.addEventListener("click", (event) => {
@@ -244,16 +255,27 @@ document.addEventListener("DOMContentLoaded", () => {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                // If user confirms, delete all entries from LocalStorage and clear the taskContainer
-                localStorage.clear();
+                // Get all keys from localStorage
+                const keys = Object.keys(localStorage);
+    
+                // Filter out the userPreferences key
+                const keysToKeep = keys.filter(key => key !== "userPreferences");
+    
+                // Clear localStorage except for userPreferences
+                keysToKeep.forEach(key => localStorage.removeItem(key));
+    
+                // Clear the taskContainer
                 taskContainer.innerHTML = "";
+    
                 swal("All data has been deleted!", {
                     icon: "success",
                 });
             }
         });
     });
+    
 
+    
     const logoutLink = document.getElementById("logoutLink");
     logoutLink.addEventListener("click", (event) => {
         event.preventDefault();
@@ -346,23 +368,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Call the function to display profile data
     displayProfileData();
 
+
+
     // Event listeners for section links
-    myDayLink.addEventListener("click", () => displayTasks("myDay"));
-    thisWeekLink.addEventListener("click", () => displayTasks("thisWeek"));
-    thisMonthLink.addEventListener("click", () => displayTasks("thisMonth"));
-    otherLink.addEventListener("click", () => displayTasks("other"));
+    myDayLink.addEventListener("click", function () { displayTasks("myDay"); toggleMenu();});
+    thisWeekLink.addEventListener("click", function () { displayTasks("thisWeek"); toggleMenu();});
+    thisMonthLink.addEventListener("click", function () { displayTasks("thisMonth"); toggleMenu();});
+    otherLink.addEventListener("click", function () { displayTasks("other"); toggleMenu();});
+
+
     let currentSection = "myDay";
     displayTasks(currentSection);
-});
 
 
-document.addEventListener('DOMContentLoaded', function () {
     const burgerIcon = document.getElementById('burgerIcon');
     const containerLeft = document.getElementById('containerLeft');
   
-    burgerIcon.addEventListener('click', function () {
+    var toggleMenu = () => {
         containerLeft.classList.toggle('v-class');
-      burgerIcon.classList.toggle('cross');
-    });
-  });
-  
+        burgerIcon.classList.toggle('cross');
+        console.log('hey1');
+    };
+
+    burgerIcon.addEventListener('click', toggleMenu);
+
+});
+
